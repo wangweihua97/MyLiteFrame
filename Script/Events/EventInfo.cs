@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
 namespace Events
 {
