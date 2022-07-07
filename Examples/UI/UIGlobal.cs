@@ -1,26 +1,29 @@
-﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Events;
+using Examples.FirstScene;
+using Examples.ProgressBar;
 using OtherMgr;
 using Script.DB;
+using Script.Main;
 using Script.Main.Base;
 using Script.Mgr;
-using UnitMgr;
 using UnityEngine;
 
-namespace Script.Main
+public class UIGlobal : MonoBehaviour
 {
-    public class Global : MonoBehaviour
-    {
-        public static SceneMgr SceneMgr;
-        public static InputMgr InputMgr;
-        public static ExcelMgr ExcelMgr;
+    // Start is called before the first frame update
+    public static ProgressBarSceneMgr ProgressBarSceneMgr;
         //public static LuaMgr LuaMgr;
         
-        public static Global instance;
+        public static UIGlobal instance;
 
-        private void Awake()
+        private void Start()
         {
             instance = this;
+            Init();
+            GameFlowMgr.EnterGame.Invoke();
         }
 
         public void Init()
@@ -31,13 +34,14 @@ namespace Script.Main
             gameFlowTaskGroup.Attach(GameFlowMgr.EnterGame);
             GameFlowMgr.LoadedInitData.AddListener(FirstInit);
             GameFlowMgr.LoadedInitData.AddListener(AddMgr);
-            GameFlowMgr.LoadedInitData.AddListener(InitLoaodingUI);
+            GameFlowMgr.EnterGame.AddListener(InitLoaodingUI);
+            GameFlowMgr.LoadedInitData.AddListener(LoadFirstScene);
             //SceneMgr.StartScene("TestScene",null);
         }
 
-        public void LoadFirstScene()
+        void LoadFirstScene()
         {
-            SceneMgr.StartScene("LogoScene" ,null);
+            ProgressBarSceneMgr.StartScene("ProgressBarScene" ,ProgressBarLoadingViewMgr.ProgressBarLoadingView);
             //测试lua
             //SceneMgr.StartLuaScene("Test" ,null);
             //SceneMgr.EnterGameScene("C6");StartScene
@@ -45,24 +49,11 @@ namespace Script.Main
 
         void FirstInit()
         {
-            DBManager.CheckTable();
         }
         
         void AddMgr()
         {
-            SceneMgr = AddMgr<SceneMgr>();
-            ExcelMgr = AddMgr<ExcelMgr>();
-            //测试lua
-            //LuaMgr = AddMgr<LuaMgr>();
-            InputMgr = gameObject.AddComponent<InputMgr>();
-            gameObject.AddComponent<AudioManager>();
-            /*gameObject.AddComponent<JoyconInputMgr>();
-            gameObject.AddComponent<LeftJoyconMgr>();
-            gameObject.AddComponent<RightJoyconMgr>();*/
-            gameObject.AddComponent<SpritesMgr>();
-            WaitTimeMgr waitTimeMgr = new WaitTimeMgr();
-
-            PoolManager.CreatPoolManager();
+            ProgressBarSceneMgr = AddMgr<ProgressBarSceneMgr>();
         }
         
         T AddMgr<T>() where T : BaseGameFlow
@@ -75,8 +66,6 @@ namespace Script.Main
 
         void InitLoaodingUI()
         {
-            RootUIMgr.instance.CreatUIMgr<LoadingViewMgr>(true);
-            RootUIMgr.instance.CreatUIMgr<StoryMgr>();
+            RootUIMgr.instance.CreatUIMgr<ProgressBarLoadingViewMgr>(true);
         }
-    }
 }

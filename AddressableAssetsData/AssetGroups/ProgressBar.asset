@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ProgressBar
+  m_EditorClassIdentifier: 
+  m_GroupName: ProgressBar
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e98a7ec55a21c4244ba2fd174d1d637a
+  m_SerializeEntries:
+  - m_GUID: 6cf47533ffddee44aa9fe29273ff51de
+    m_Address: ProgressBarLoadingView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UIView
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 041eea135e92eaa479afeb4f6797acec
+    m_Address: ProgressBarScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6bee6586bd1a0c14d9112f7a22cac643, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0554f4318e1967647be1f3ceb87cb480, type: 2}
+    - {fileID: 11400000, guid: 7809207aa5df5d94280b1456aabc24b2, type: 2}
