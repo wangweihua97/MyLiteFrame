@@ -7,7 +7,7 @@ namespace Player
 {
     public class PlayerMove
     {
-        public PlayerMgr Owner;
+        /*public PlayerMgr Owner;
         public Transform MoveTransform;
         public bool IsMove;
         
@@ -73,6 +73,6 @@ namespace Player
         {
             IsMove = false;
             Owner.playerAnimationMgr.ChangeDefaultIdle(0.3f);
-        }
+        }*/
     }
 }

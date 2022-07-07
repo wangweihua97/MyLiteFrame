@@ -76,7 +76,6 @@ namespace Script.Main
         void InitLoaodingUI()
         {
             RootUIMgr.instance.CreatUIMgr<LoadingViewMgr>(true);
-            RootUIMgr.instance.CreatUIMgr<StoryMgr>();
         }
     }
 }

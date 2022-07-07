@@ -37,7 +37,6 @@ namespace UI.Loading
             //
             EventCenter.ins.AddEventListener<KeyCode>("KeyDown",KeyDown);
             cfgIdx = UnityEngine.Random.Range(1, cfgLen);
-            updateTips();
         }
 
         protected override void UnLoadScene()
@@ -64,8 +63,6 @@ namespace UI.Loading
         {
             base.DoCreat();
             LoadingViewMgr.LoadingView = this;
-            cfgLen = ExcelMgr.TDTips.Count;
-            // cfgLen = ExcelMgr.TDCharacter.GetDictionary().Count;
         }
 
         protected override void DoUpdata()
@@ -91,18 +88,12 @@ namespace UI.Loading
                     cfgIdx++;
                     if (cfgIdx>=cfgLen)
                         cfgIdx = 1;
-                    updateTips();
                     break;
                 case KeyCode.K:
                     
                     break;
             }
             
-        }
-
-        void updateTips()
-        {
-            tips_txt.text = ExcelMgr.TDTips.Get(""+cfgIdx).content;
         }
     }
 }

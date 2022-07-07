@@ -78,35 +78,6 @@ namespace OtherMgr
             _AudioSource_BackgroundAudio = _AudioSourceArray[0];               //其中一个用来播放背景音乐
             _AudioSource_AudioEffectA = _AudioSourceArray[1];                  //其中一个用来播放音乐1
             _AudioSource_AudioEffectB = _AudioSourceArray[2];
-
-
-            //从数据持久化中得到音量数值
-            /*if (PlayerPrefs.GetFloat("AudioBackgroundVolumns") >= 0)
-            {
-                AudioBackgroundVolumns = PlayerPrefs.GetFloat("AudioBackgroundVolumns");
-                _AudioSource_BackgroundAudio.volume = AudioBackgroundVolumns;
-            }
-
-            if (PlayerPrefs.GetFloat("AudioEffectVolumns") >= 0)
-            {
-                AudioEffectVolumns = PlayerPrefs.GetFloat("AudioEffectVolumns");
-                _AudioSource_AudioEffectA.volume = AudioEffectVolumns;
-                _AudioSource_AudioEffectB.volume = AudioEffectVolumns;
-            }
-
-            //设置音乐的音效
-            if (PlayerPrefs.HasKey("AudioBackgroundPitch"))
-            {
-                AudioBackgroundPitch = PlayerPrefs.GetFloat("AudioBackgroundPitch");
-            }
-            if (PlayerPrefs.HasKey("AudioEffectPitch"))
-            {
-                AudioEffectPitch = PlayerPrefs.GetFloat("AudioEffectPitch");
-            }
-
-            _AudioSource_BackgroundAudio.pitch = AudioBackgroundPitch;
-            _AudioSource_AudioEffectA.pitch = AudioEffectPitch;
-            _AudioSource_AudioEffectB.pitch = AudioEffectPitch;*/
         }
 
         public static void RefreshBackgroundAudio()

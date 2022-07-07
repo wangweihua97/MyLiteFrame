@@ -14,13 +14,13 @@ namespace OtherMgr
             List<string> paths = new List<string>();
             paths.Add("HitEffect");
             paths.Add(AttackEffectMgr.GetFullPath("Monster_Diss"));
-            foreach (var kvp in ExcelMgr.TDSkill.GetDictionary())
+            /*foreach (var kvp in ExcelMgr.TDSkill.GetDictionary())
             {
                 AddSkillEffect(paths ,kvp.Value.skillEffects);
                 AddSkillEffect(paths ,kvp.Value.bulletEffects);
                 AddSkillEffect(paths ,kvp.Value.hitEffects);
 
-            }
+            }*/
             PoolManager.EffectPool.poolCreatMultiGoHelper.AddGameObject(paths,attach);
         }
 

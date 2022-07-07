@@ -1,7 +1,5 @@
 ﻿using Events;
 using Script.Mgr;
-using UI.LevelSelect;
-using UI.Main;
 
 namespace Examples.UI
 {

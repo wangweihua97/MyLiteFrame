@@ -1,13 +1,4 @@
-﻿﻿using System;
-using System.Collections;
-using System.Collections.Generic;
- using Script.Game;
- using Script.Main;
- using Script.Mgr;
- using Script.Model;
- using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Playables;
+﻿using UnityEngine;
 
 namespace Player
 {
@@ -15,7 +6,7 @@ namespace Player
     {
         //private ITDLuaMgr AnimationLuaMgr;
         
-        [HideInInspector]
+        /*[HideInInspector]
         public Dictionary<string,AnimationModel> AniMap = new Dictionary<string, AnimationModel>();
         
         
@@ -443,6 +434,6 @@ namespace Player
         {
             if(mPlayableGraph.IsValid())
                 mPlayableGraph.Destroy();
-        }
+        }*/
     }
 }

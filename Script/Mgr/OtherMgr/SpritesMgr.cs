@@ -36,10 +36,11 @@ namespace OtherMgr
         
         public static SpriteModel Get(string name)
         {
-            TDIcon tdIcon = ExcelMgr.TDIcon.Get(name);
+            /*TDIcon tdIcon = ExcelMgr.TDIcon.Get(name);
             if(tdIcon.FolderName == null)
                 return new SpriteModel(null ,false);
-            return new SpriteModel(Get(tdIcon.FolderName, tdIcon.FileName) ,tdIcon.IsOverturn);;
+            return new SpriteModel(Get(tdIcon.FolderName, tdIcon.FileName) ,tdIcon.IsOverturn);;*/
+            return default;
         }
         
         public static SpriteAtlas GetSpriteAtlas(string key)

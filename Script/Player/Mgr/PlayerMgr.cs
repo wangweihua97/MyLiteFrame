@@ -1,19 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using Enemy;
-using OtherMgr;
-using Script.DB;
-using Script.DB.DBModel;
-using Script.Enemy.Model;
-using Script.Model;
-using Script.Tool;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Player
 {
     public class PlayerMgr : MonoBehaviour
     {
-        public static PlayerMgr instance;
+        /*public static PlayerMgr instance;
         public static PlayerMgr CoachInstance;
         public PlayerRole PlayerRole = PlayerRole.Player;
         [HideInInspector]
@@ -179,6 +170,6 @@ namespace Player
         {
             /*if(CoachInstance == this)
                 transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y,transform.localScale.z);*/
-        }
+        /*}*/
     }
 }

@@ -16,7 +16,7 @@ namespace Player
 {
     public class PlayerClothingMgr : MonoBehaviour
     {
-        [Header("角色眼睛")] public GameObject Eyes;
+        /*[Header("角色眼睛")] public GameObject Eyes;
         [Header("角色身体")] public GameObject Body;
         [Header("角色头部")] public GameObject Head;
         [Header("角色发部")] public GameObject Hair;
@@ -592,6 +592,6 @@ namespace Player
 
             return outo;
         }
-        #endregion
+        #endregion*/
     }
 }
