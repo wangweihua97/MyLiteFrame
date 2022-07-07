@@ -24,8 +24,14 @@ MonoBehaviour:
     - UIView
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 041eea135e92eaa479afeb4f6797acec
-    m_Address: ProgressBarScene
+  - m_GUID: db740910f318ff542a7cf4a8cf27b114
+    m_Address: ProgressBarSceneA
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: aba2fca45ed3c264facdc0a40061227f
+    m_Address: ProgressBarSceneB
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

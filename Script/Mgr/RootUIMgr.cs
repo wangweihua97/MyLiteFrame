@@ -15,13 +15,14 @@ namespace Script.Mgr
         private void Awake()
         {
             instance = this;
+            _dictionary = new Dictionary<Type, UUIMgr>();
+            _linkedList = new DoubleLinkedList<UUIMgr>();
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()
         {
-            _dictionary = new Dictionary<Type, UUIMgr>();
-            _linkedList = new DoubleLinkedList<UUIMgr>();
-            DontDestroyOnLoad(gameObject);
+            
         }
 
         public TUIMgr CreatUIMgr<TUIMgr>(bool isTop = false) where TUIMgr : UUIMgr
@@ -61,8 +62,25 @@ namespace Script.Mgr
         public void Top(Type type)
         {
             UUIMgr uiMgr = GetUIMgr(type);
-            _linkedList.MoveToBack(_linkedList.Find(uiMgr));
-            uiMgr.RootIndex = _linkedList.Size - 1;
+            int index = _linkedList.Find(uiMgr);
+            if (index != _linkedList.Size - 1)
+            {
+                _linkedList.MoveToBack(_linkedList.Find(uiMgr));
+                uiMgr.RootIndex = _linkedList.Size - 1;
+                Refresh();
+            }
+        }
+        
+        public void Head(Type type)
+        {
+            UUIMgr uiMgr = GetUIMgr(type);
+            int index = _linkedList.Find(uiMgr);
+            if (index != 0)
+            {
+                _linkedList.MoveToHead(_linkedList.Find(uiMgr));
+                uiMgr.RootIndex = 0;
+                Refresh();
+            }
         }
         
         public bool IsTop<TUIMgr>()where TUIMgr : UUIMgr
@@ -86,7 +104,21 @@ namespace Script.Mgr
             }
             return false;
         }
-        
+
+        public UUIMgr GetTop()
+        {
+            DoubleLinkedList<UUIMgr>.DoubleLinkedNode node = _linkedList.End;
+            for (int i = 0; i < _linkedList.Size; i++)
+            {
+                if (node.Value.IsMask)
+                { 
+                    return node.Value;
+                }
+                node = node.Prior;
+            }
+            return default;
+        }
+
         public bool IsLayerTop<TUIMgr>(string sortingLayerName)where TUIMgr : UUIMgr
         {
             return IsLayerTop(typeof(TUIMgr), sortingLayerName);
@@ -122,6 +154,7 @@ namespace Script.Mgr
             {
                 uuiMgr.RootIndex = i;
                 uuiMgr.Refresh();
+                i++;
             }
         }
 

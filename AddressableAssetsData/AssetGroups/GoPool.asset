@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GoPool
+  m_EditorClassIdentifier: 
+  m_GroupName: GoPool
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 20b88c14aceea804f98d8669c2114ee7
+  m_SerializeEntries:
+  - m_GUID: f614babf866eebd4ab24dbf056c14e6b
+    m_Address: SphereGo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 7279295371009276459, guid: f614babf866eebd4ab24dbf056c14e6b, type: 3}
+    m_TargetAsset: {fileID: 7279295371009276459, guid: f614babf866eebd4ab24dbf056c14e6b, type: 3}
+  - m_GUID: 3001b4c59b7791c499c2eb1059264091
+    m_Address: CubeGo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8969641859622616109, guid: 3001b4c59b7791c499c2eb1059264091, type: 3}
+    m_TargetAsset: {fileID: 8969641859622616109, guid: 3001b4c59b7791c499c2eb1059264091, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6bee6586bd1a0c14d9112f7a22cac643, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e8e5e297c4f45c84baf93a991a67366a, type: 2}
+    - {fileID: 11400000, guid: 5a48ecd16845d20419cdaeb217328018, type: 2}

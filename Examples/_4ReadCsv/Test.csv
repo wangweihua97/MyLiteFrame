@@ -1,0 +1,4 @@
+头Id,,,,,,
+Id,myInt,myBool,myDouble,myString,myListString,MyDictionary
+1,1,0,111.111,这是1,"s1,s11,s1,s1,s1,s1,s11","a:1,b:2,c:3,d:4,e:5.5"
+2,2,1,222.222,这是2,"s2,s2,ss2,sss2,,sss2,ss","f:1.2,g:3.5"

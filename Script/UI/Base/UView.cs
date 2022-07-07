@@ -147,17 +147,22 @@ namespace UI.Base
         /// </summary>
         public virtual void Show(bool show)
         {
-            if (show && IsShow != show)
+            if(show && IsShow != show)
+                _parent.AddShowCount();
+            else if(!show && IsShow != show)
+                _parent.DecreaseShowCount();
+            
+            if (show)
             {
                 Top();
             }
-            else if (IsShow != show && IsTop())
+            else if (!show)
             {
                 Head();
             }
-
-            IsShow = show;
+            
             SetActive(show);
+            IsShow = show;
         }
 
         /// <summary>
@@ -253,7 +258,7 @@ namespace UI.Base
         /// </summary>
         public virtual void DoOpen()
         {
-            if (!IsShow)
+            if (!IsShow || !IsRootTop())
             {
                 Show(true);
                 foreach (var component in _uComponents)
@@ -261,8 +266,8 @@ namespace UI.Base
                     component.DoOpen();
                 }
             }
-
-            CanvasGroup.alpha = 1;
+            if(CanvasGroup != null)
+                CanvasGroup.alpha = 1;
 
         }
 

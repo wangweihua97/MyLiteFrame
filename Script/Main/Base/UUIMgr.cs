@@ -11,6 +11,7 @@ using UnityEngine;
 public class UUIMgr : BaseUIMgr
 {
     public int RootIndex;
+    protected int ShowCount;
     private const int UiMgrMaxViewNum = 50;
 
     private DoubleLinkedList<UView> _doubleLinkedList;
@@ -44,11 +45,27 @@ public class UUIMgr : BaseUIMgr
         canvas.sortingOrder = GetOrder(_doubleLinkedList.Size - 1);
         UI.Parent = this;
         UI.DoCreat();
-        if(UI.DefaultShow)
+        if (UI.DefaultShow)
+        {
             UI.DoOpen();
+            ShowCount++;
+        }
         else
+        {
             UI.Show(false);
+        }
     }
+
+    public void AddShowCount()
+    {
+        ShowCount++;
+    }
+    
+    public void DecreaseShowCount()
+    {
+        ShowCount--;
+    }
+
 
     public int GetUIOrder(UView ui)
     {
@@ -65,12 +82,15 @@ public class UUIMgr : BaseUIMgr
         RootUIMgr.instance.Top(GetType());
         int index = GetIndex(ui);
         _doubleLinkedList.MoveToBack(index);
-        ui.SetOrder(GetOrder(index));
+        ui.SetOrder(GetOrder(_doubleLinkedList.Size - 1));
+        Refresh();
     }
     
     public void Head(UView ui)
     {
         _doubleLinkedList.MoveToHead(_doubleLinkedList.Find(ui));
+        if(ShowCount == 0)
+            RootUIMgr.instance.Head(this.GetType());
     }
     
     public void End(UView ui)
@@ -104,6 +124,11 @@ public class UUIMgr : BaseUIMgr
     public bool UIIsTop(UView ui)
     {
         return _doubleLinkedList.IsEnd(ui);
+    }
+
+    public UView GetTop()
+    {
+        return _doubleLinkedList.End.Value;
     }
 
     public bool IsLayerTop()

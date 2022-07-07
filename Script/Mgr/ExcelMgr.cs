@@ -39,59 +39,6 @@ namespace Script.Mgr
         protected override void DoEnable()
         {
             base.DoEnable();
-            TDActionFlow = new List<CsvTable<TDActionFlow>>();
-            GameFlowTaskGroup gameFlowTaskGroup = FlowTaskFactory.CreatTaskGroup();
-            TestTable = new CsvTable<TestTable>("TestTable" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDActAnimation = new CsvTable<TDActAnimation>("Csv/ActAnimation" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDAction = new CsvTable<TDAction>("Csv/Action" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDBattleScene = new CsvTable<TDBattleScene>("Csv/TDBScene" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDGlobal = new CsvTable<TDGlobal>("Csv/Global" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDLevel = new CsvTable<TDLevel>("Csv/Level" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDMonster = new CsvTable<TDMonster>("Csv/Monster" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDPlayMode = new CsvTable<TDPlayMode>("Csv/PlayMode" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDSoundEffects = new CsvTable<TDSoundEffects>("Csv/SoundEffects" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDSkill = new CsvTable<TDSkill>("Csv/Skill" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDVoiceTips = new CsvTable<TDVoiceTips>("Csv/VoiceTips" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDTraining = new CsvTable<TDTraining>("Csv/TDTraining" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDIcon = new CsvTable<TDIcon>("Csv/Icon" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDScene = new CsvTable<TDScene>("Csv/TDScene" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDMusic = new CsvTable<TDMusic>("Csv/TDMusic" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDCharacter = new CsvTable<TDCharacter>("Csv/TDCharacter" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDCameraLocation = new CsvTable<TDCameraLocation>("Csv/TDCameraLocation" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDSuit = new CsvTable<TDSuit>("Csv/Suit" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDUITpis = new CsvTable<TDUITpis>("Csv/UITpis" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDTips = new CsvTable<TDTips>("Csv/Tips" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDItem = new CsvTable<TDItem>("Csv/TDItem" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDStory = new CsvTable<TDStory>("Csv/Story" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDBattle = new CsvTable<TDBattle>("Csv/TDBattle" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            TDReward = new CsvTable<TDReward>("Csv/TDReward" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();
-            /*TDNPC = new CsvTable<TDNPC>("Csv/TDNPC" ,gameFlowTaskGroup.CompleteATask);
-            gameFlowTaskGroup.Add();*/
-            gameFlowTaskGroup.Attach(GameFlowMgr.LoadedInitData);
         }
 
         public void InitTDActionFlow(string[] levelId ,bool addPrefix = true)
